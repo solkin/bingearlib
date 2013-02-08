@@ -36,11 +36,11 @@ public class RecordUtil {
         }
     }
 
-    public static int saveFile(String fileName, BinGear dataGear, boolean isINIFormat) throws IOException {
+    public static int saveFile(String fileName, BinGear dataGear, boolean isIniFormat) throws IOException {
         try {
             RecordStore recordStore = RecordStore.openRecordStore(fileName, true);
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            if (isINIFormat) {
+            if (isIniFormat) {
                 dataGear.exportToIni(new DataOutputStream(baos));
             } else {
                 dataGear.saveToDat(new DataOutputStream(baos));
